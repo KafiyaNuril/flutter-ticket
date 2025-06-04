@@ -283,58 +283,68 @@ class PembayaranPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16)),
               child: Padding(
                 padding: const EdgeInsets.all(16),
-                child: Row(
+                child: Column(
                   children: [
-                    CircleAvatar(
-                      radius: 24,
-                      backgroundColor: Colors.grey[200],
-                      child: Image.asset(
-                        'assets/icons/tagihan.png',
-                        width: 18,
-                        height: 24,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text("Total Tagihan",
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontFamily: 'Poppins',
-                                  fontSize: 14)),
-                          Text("Rp $price",
-                              style: const TextStyle(
-                                  fontSize: 22,
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.bold)),
-                          const SizedBox(height: 8),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 24,
+                          backgroundColor: Colors.grey[200],
+                          child: Image.asset(
+                            'assets/icons/tagihan.png',
+                            width: 18,
+                            height: 24,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                        const SizedBox(width: 16),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text("Nama Pesanan",
-                                  style: TextStyle(fontFamily: 'Poppins')),
-                              Text(
-                                  "Tiket ${_capitalize(type)} - ${category.toUpperCase()}",
-                                  style:
-                                      const TextStyle(fontFamily: 'Poppins')),
+                              const Text("Total Tagihan",
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontFamily: 'Poppins',
+                                      fontSize: 14)),
+                              Text("Rp $price",
+                                  style: const TextStyle(
+                                      fontSize: 22,
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.bold)),
+                              const SizedBox(height: 8),
                             ],
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text("Tanggal",
-                                  style: TextStyle(fontFamily: 'Poppins')),
-                              Text(formattedDate,
-                                  style: const TextStyle(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.grey)),
-                            ],
-                          )
-                        ],
-                      ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text("Nama Pesanan",
+                            style: TextStyle(
+                              fontFamily: 'Poppins')),
+                        Text(
+                            "Tiket untuk ${_capitalize(type)} - ${category.toUpperCase()}",
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.grey[700],
+                            )),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text("Tanggal",
+                            style: TextStyle(fontFamily: 'Poppins')),
+                        Text(formattedDate,
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.grey[700],)),
+                      ],
                     )
                   ],
                 ),
